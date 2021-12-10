@@ -1,0 +1,24 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block content %}
+    <form class="register-form" action="/register" method="post">
+
+        <div class="form-header">
+            <h1>Want To Join Us ?</h1>
+        </div>
+
+        <div class="form-body">
+
+            {{ form.hidden_tag() }}
+            {{wtf.form_field(form.firstName)}}
+            {{wtf.form_field(form.lastName)}}
+            {{wtf.form_field(form.email)}}
+            {{wtf.form_field(form.password)}}
+
+        </div>
+        <button type="submit" class="btn btn-info"> Send </button>
+    </form>
+
+{% endblock %}

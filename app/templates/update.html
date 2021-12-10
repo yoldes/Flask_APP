@@ -1,0 +1,37 @@
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+
+	{% for message in get_flashed_messages() %}
+
+		<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		  {{ message }}
+		  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+		</div>
+
+	{% endfor %}
+
+
+	<h1 style="font-family: serif; margin-left:700px"> Update User </h1>
+	<br/>
+
+	<form action="/update/{{user_update.id}}" method="POST" style="font-family: serif; width: 200px; margin-left:700px">
+
+		{{ form.hidden_tag() }}
+
+		{{ form.firstName.label(class="form-label") }}
+
+		{{ form.firstName(class="form-control", value=user_update.firstname) }}
+		<br/>
+
+		{{ form.lastName.label(class="form-label") }}
+
+		{{ form.lastName(class="form-control", value=user_update.lastname) }}
+		<br/>
+
+		<button type="submit" class="btn btn-info" style="width: 200px"> Send </button>
+
+
+	</form>
+
+{% endblock %}

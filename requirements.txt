@@ -1,0 +1,10 @@
+Flask==1.0.3
+Flask-Bootstrap==3.3.7.1
+WTForms==2.2.1
+Flask-WTF==0.14.2
+werkzeug==0.16.0
+Flask-SQLAlchemy==2.5.1
+Flask-Bcrypt==0.7.1
+Flask-Login==0.4.1
+flask-limiter-2.0.1
+

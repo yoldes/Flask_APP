@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+
+{% block head %}
+
+
+{% block title %}All users : {% endblock %}
+
+{% endblock %}
+{% block body %}
+    {% block content %}
+
+
+    <form class="" action="/dashboard" method="post">
+
+                {% if values %}
+                <div class="card" style="width: 18rem;">
+
+                    <ul class="list-group list-group-flush">
+                        {% for row in values %}
+                        <li class="list-group-item">{{row.firstname}} : {{ row.lastname }}</li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+                {% endif %}
+
+
+    {{wtf.form_field(form.submit)}}
+    </form>
+
+  {% endblock %}
+{% endblock %}

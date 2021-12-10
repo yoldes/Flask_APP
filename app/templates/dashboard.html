@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block head %}
+    {% block title %}{% endblock %}
+{% endblock %}
+
+{% block body %}
+    {% block content %}
+
+        <div class="card">
+             <div class="card-header" style="font-family: serif;">
+                 Hello {{current_user.firstname}}, Your personnel informations :
+                 <button type="button" class="btn btn-outline-danger"> <a href="{{url_for('logout.logout')}}"> Exit </a></button>
+             </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+
+                    <div class="test">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" style="font-family: serif;"><strong>Name : </strong> {{ current_user.firstname }}  </li>
+                            <li class="list-group-item" style="font-family: serif;"><strong>last name :  </strong> {{ current_user.lastname }} </li>
+                            <li class="list-group-item" style="font-family: serif;"><strong>email : </strong> {{ current_user.email }} </li>
+                        </ul>
+                    </div>
+
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-family: serif;">Want to update your profil ? </h5>
+                        <a href="/update/{{current_user.id}}" class="btn btn-primary" style="font-family: serif;">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">See all of our users </h5>
+                        <a href="/data" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}
+{% endblock %}
